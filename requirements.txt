@@ -8,4 +8,5 @@ keras
 Pillow
 pathlib
 importlib
+tifffile
 
