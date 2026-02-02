@@ -30,13 +30,86 @@ st.set_page_config(page_title="Mangrove Classifier", layout="wide", page_icon="�
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-    .main { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); color: #ffffff; font-family: 'Poppins', sans-serif; }
-    .title-text { font-family: 'Orbitron', sans-serif; background: linear-gradient(90deg, #00d4ff, #f5576c, #ffffff, #00d4ff); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3rem; font-weight: 700; text-align: center; animation: gradientMove 8s linear infinite; margin-bottom: 10px; }
+    
+    /* Forcer le fond sombre sur toute l'application */
+    .stApp {
+        background: linear-gradient(135deg, #040d08 0%, #0a2e1a 50%, #040d08 100%);
+        color: #ffffff;
+    }
+
+    .main {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Style du titre avec animation */
+    .title-text {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(90deg, #00ff88, #00d4ff, #ffffff, #00ff88);
+        background-size: 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+        animation: gradientMove 8s linear infinite;
+        padding: 20px 0;
+    }
+
     @keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
-    .glass-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(15px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.06); padding: 18px; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.6); margin-bottom: 18px; }
-    div.stButton > button { background: linear-gradient(45deg, #00d4ff, #f5576c); border: none; color: white; padding: 12px; font-family: 'Orbitron', sans-serif; font-size: 18px; border-radius: 30px; width: 100%; letter-spacing: 1px; box-shadow: 0 0 12px rgba(0,212,255,0.3); transition: 0.3s; }
-    div.stButton > button:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(245,87,108,0.6); }
-    [data-testid="stSidebar"] { background: rgba(15,12,41,0.95); border-right: 1px solid #00d4ff; }
+
+    /* Cartes style "Glassmorphism" */
+    .glass-card {
+        background: rgba(0, 255, 136, 0.05);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        border: 1px solid rgba(0, 255, 136, 0.1);
+        padding: 25px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        margin-bottom: 20px;
+    }
+
+    /* Personnalisation des onglets (Tabs) */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 10px;
+        background-color: rgba(0,0,0,0.3);
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.05);
+        color: white;
+        font-family: 'Orbitron';
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(45deg, #00ff88, #00d4ff) !important;
+    }
+
+    /* Boutons */
+    div.stButton > button {
+        background: linear-gradient(45deg, #00ff88, #00d4ff);
+        border: none;
+        color: #040d08;
+        font-weight: bold;
+        padding: 15px;
+        font-family: 'Orbitron', sans-serif;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    div.stButton > button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+    }
+
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #040d08;
+        border-right: 1px solid #00ff8833;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -446,4 +519,5 @@ st.sidebar.markdown(f"""
         <p style='font-size: 0.8em;'>Hamad • Rassem • Mahamat</p>
         <p style='font-size: 1.4em; color: #888;'>Modèle TL Actif : **Xception TL**</p>
     </div>
+
 """, unsafe_allow_html=True)
