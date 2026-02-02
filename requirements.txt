@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+pickle
+tensorflow==2.18.0
+plotly
+keras
+pillow
+pathlib
+glob
+importlib
