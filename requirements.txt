@@ -1,11 +1,11 @@
 streamlit
 pandas
 numpy
-pickle
+opencv-python-headless
 tensorflow==2.18.0
 plotly
 keras
-pillow
+Pillow
 pathlib
 glob
 importlib
