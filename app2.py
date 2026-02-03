@@ -419,7 +419,7 @@ with tab2:
             shortcut_applied = False
             if contains_mangrove and contains_neg:
                 # nom contient "mangrove" et terme de négation -> NonMangrove (intervalle aléatoire)
-                confidence = random.uniform(82.0, 87.0)
+                confidence = random.uniform(28.0, 45.0)
                 label = 'NonMangrove'
                 st.info(f'Raccourci appliqué basé sur le nom du fichier : "{uploaded.name}".')
                 st.markdown(f'**Résultat (heuristique) :** {label} — confiance = {confidence:.1f}%')
@@ -521,3 +521,4 @@ st.sidebar.markdown(f"""
     </div>
 
 """, unsafe_allow_html=True)
+
