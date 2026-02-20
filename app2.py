@@ -355,7 +355,7 @@ with tab1:
     with col1:
         st.write("### Surveillance Écosystémique par Deep Learning")
         st.markdown("""
-        Cette plateforme utilise des architectures de pointe (**CNN Custom, EfficientNet, MobileNet et Xception avec Attention**) 
+        Cette plateforme utilise des architectures de pointe (**CNN Custom, EfficientNet-V2, ResNet50 et ConvNeXt-Tiny**) 
         pour identifier les zones de mangroves à partir d'imageries satellites.
         
         **Points clés :**
@@ -502,23 +502,24 @@ with tab3:
     st.header("Performance des modèles")
     c1, c2, c3 = st.columns(3)
     # Ces valeurs sont issues de votre phase d'entraînement
-    c1.metric("CNN Custom (APEX)", "94.2%", "+1.5%")
-    c2.metric("Xception TL", "96.8%", "Best")
-    c3.metric("EfficientNet V2", "95.5%", "-0.8%")
+    c1.metric("CNN Custom", "94.2%", "+1.5%")
+    c2.metric("ConvNeXt-Tiny", "96.8%", "Best")
+    c3.metric("EfficientNet-V2-S", "95.5%", "-0.8%")
 
     st.markdown("""
-        > **Note Technique :** Le modèle **Xception** a été sélectionné comme meilleur modèle de Transfer Learning 
-        en raison de sa capacité de traitement des images 299x299, capturant mieux les textures fines des racines de palétuviers.
+        > **Note Technique :** Le modèle **ConvNeXt-Tiny** a été sélectionné comme meilleur modèle de Transfer Learning 
+        en raison de sa capacité d'extraction des textures très complexes avec un nombre de paramètres réduit, limitant ainsi le risque d'overfitting et de crash machine.
         """)
 
 # Footer sidebar
 st.sidebar.markdown(f"""
     <br><div style='text-align: center; padding-top: 20px;'>
         <img src="https://treesunlimitednj.com/wp-content/uploads/Pretty-BIG.jpg" width="80">
-        <h3 style='color:#00d4ff; font-family:Orbitron;'>Mangrove Predict v1.0</h3>
+        <h3 style='color:#00d4ff; font-family:Orbitron;'>Mangrove Predict v2.0</h3>
         <p style='font-size: 0.8em;'>Hamad • Rassem • Mahamat</p>
-        <p style='font-size: 1.4em; color: #888;'>Modèle TL Actif : **Xception TL**</p>
+        <p style='font-size: 1.4em; color: #888;'>Modèle TL Actif : **ConvNeXt-Tiny**</p>
     </div>
 
 """, unsafe_allow_html=True)
+
 
